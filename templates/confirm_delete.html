@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Delete Profile</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='profile.css') }}"
+    />
+    <link rel="stylesheet"
+     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" 
+     integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+  <body>
+    {% if current_user.is_authenticated %}
+    <div class="user__logged">
+      <p><span class="user__back"><a href="{{ url_for('profile') }}"><i class="fa-solid fa-arrow-left"></i>Profile</a></span></p>
+      <span class="user__logout"><a href="{{ url_for('logout') }}">Logout</a></span>
+    </div>
+    {% endif %}
+    <div class="user__profile">
+      <h2>Confirm Deletion</h2>
+      <p>Are you sure you want to delete your profile?</p>
+      <div class="user__update__delete">
+        <a href="{{ url_for('profile') }}"><button id="show-form-button" class="cancel">Cancel</button></a>
+        <form method="POST">
+            <button type="submit" class="delete-profile">Yes, Delete My Profile</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

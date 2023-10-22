@@ -1,0 +1,32 @@
+word,category
+"happy",Positive
+"amasing",Positive
+"excellence",Positive 
+"delicious",Positive
+"impressed",Positive
+"wonderful",Positive 
+"good",Positive
+"outstanding",Positive
+"beautiful ",Positive
+"tasty",Positive
+"perfect",Positive
+"fantastic",Positive
+"best",Positive
+"great",Positive
+"luxurious",Positive
+"clean", Positive
+"horrible",Negative
+"disappointing",Negative
+"bad",Negative
+"overcooked",Negative
+"bland",Negative
+"unappetising",Negative
+"burnt",Negative
+"undercooked",Negative
+"unpleasent",Negative
+"overpriced",Negative
+"terrible",Negative
+"dirty",Negative
+"disgusting ",Negative
+"worst",Negative
+"filthy",Negative

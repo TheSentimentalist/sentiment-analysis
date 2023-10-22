@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Review Analyst</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+  <body>
+    {% if current_user.is_authenticated %}
+    <div class="user__logged">
+      <p>Welcome, <span class="user__name"><a href="{{ url_for('profile') }}">{{ current_user.username }}</a></span>!</p>
+      <span class="user__logout"><a href="{{ url_for('logout') }}">Logout</a></span>
+    </div>
+    {% endif %}
+    <section id="Review">
+      <div class="container-review">
+        <h3>Leave a comment:</h3>
+        {% with messages = get_flashed_messages(with_categories=true) %} 
+          {% if messages %}
+            <div class="error flash-message">
+              <ul>
+                {% for category, message in messages %}
+                  <li>{{ message }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+          {% endif %} 
+        {% endwith %}
+        <div class="card-review">
+          <form action="{{ url_for('submit_review') }}" method="POST">
+            <!-- <form action="admin.html" method="POST">-->
+            <div class="textarea">
+              <textarea
+              name="Review_comment"
+              id="Review-comment"
+              rows="4"
+              cols="50"
+              ></textarea>
+            </div>
+            <div class="rev__btn">
+              <button type="submit" class="btn">
+                <i class="fa-solid fa-paper-plane"></i>
+              </button>
+            </div>
+          </form>
+        </div><br>
+        <h1>All Reviews</h1><br>
+    
+        <table style="max-width: 50%;">
+          {% for review in loaded_reviews %}
+            {% if review %}
+              <tr>
+                <td>{{ review.text }}</td>
+              </tr>
+            {% endif %}
+            {% else %}
+              <p>No reviews/comments yet.</p>
+          {% endfor %}
+        </table>
+      </div>
+    </section>
+{% include 'include/_Footer.html' %}

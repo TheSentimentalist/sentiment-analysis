@@ -1,0 +1,104 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+    background-color: #030333;
+}
+
+.user__logged{
+    display: flex;
+    gap: 10px;
+    padding: 7px;
+    margin: 0 auto;
+    width: 50%;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+}
+
+:is(.user__back a, .user__logout a){
+    text-decoration: none;
+}
+
+.user__logout{
+    border: 1px solid #000000bf;
+    padding: 5px 20px;
+    border-radius: 50px;
+}
+
+:is(.user__logout a, .user__back a){
+    color: #fff;
+}
+
+.user__logged i{
+    margin-right: 5px;
+}
+
+#update-form {
+    display: none;
+}
+
+.user__profile {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px 150px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
+}
+
+.user__update__delete{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 10px 0;
+}
+
+:is(#show-form-button, #delete-profile, .delete-profile){
+    border: none;
+    outline: none;
+    padding: 8px 12px;
+    border-radius: 10px;
+}
+
+:is(#show-form-button, input[type="submit"]){
+    background-color: #090958;
+}
+
+#delete-profile, .delete-profile{
+    background-color: #c73838eb;
+}
+
+a #delete-profile{
+    text-decoration: none;
+}
+
+:is(#show-form-button, input[type="submit"]):hover{
+    background-color: #090958bf;
+}
+
+:is(#delete-profile, .delete-profile):hover{
+    background-color: #c73838;
+}
+
+:is(#show-form-button, #delete-profile, input[type="submit"], .delete-profile):hover{
+    cursor: pointer;
+    transition: 250ms all ease;
+}
+
+.update__user__form{
+    margin-top: 10px;
+}
+
+:is(input[type="text"], input[type="email"], input[type="submit"]){
+    border: none;
+    outline: none;
+    padding: 8px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+}

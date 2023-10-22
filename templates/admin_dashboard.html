@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Admin_Reviews_Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bokeh/3.3.0/bokeh.min.js" integrity="sha512-Oe9Xw6g1M+JPlh5cJ/ZRphBF28zvrEtd+Gp2gLHtr/MYhqfAMiJQ/7DXWPoUrhVsm2QPYMypnwIAlrBQpNu1cQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bokeh/3.4.0-dev.1/bokeh.min.js" integrity="sha512-mwamSZkmkoa4/qFGK0aCLgbH7n2NvgAKjgbN9aULEZG4Zihbfn367ewNHnB5AbYeGIYdpzyFT5F0kNUlMKaPwQ==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+  </head>
+  <body>
+    <div>
+      <h4>The hotels review Analyst</h4>
+    </div>
+     <!-- Bokeh Plot -->
+     <div class="graph">
+      {{ script | safe }}
+      {{ div | safe }}
+     </div>
+    <!-- <div id="reviewCount">{{ review_count }}</div>
+    <p>Total Reviews: {{ review_count }}</p>
+    <div class="chart-container">
+      <canvas id="myChart" width="10" height="200"></canvas>
+    </div>
+    <div>
+      <script>
+        var ctx = document.getElementById("myChart").getContext("2d");
+
+        var data = {
+          labels: [
+            "Positive Food",
+            "Negative Food",
+            "Positive Sanitary",
+            "Negative Sanitary",
+          ],
+          datasets: [
+            {
+              label: "Category Frequency",
+              data: [10, 5, 8, 3],
+              backgroundColor: ["green", "red", "blue", "purple"],
+              borderColor: ["green", "red", "blue", "purple"],
+              borderWidth: 1,
+            },
+          ],
+        };
+
+        var options = {
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            y: {
+              beginAtZero: true,
+            },
+          },
+        };
+
+        var myChart = new Chart(ctx, {
+          type: "bar",
+          data: data,
+          options: options,
+        });
+      </script>
+    </div> -->
+  </body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>User Profile</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='profile.css') }}"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+  <body>
+    {% if current_user.is_authenticated %}
+    <div class="user__logged">
+      <p><span class="user__back"><a href="{{ url_for('submit_review') }}"><i class="fa-solid fa-arrow-left"></i>Back</a></span></p>
+      <span class="user__logout"><a href="{{ url_for('logout') }}">Logout</a></span>
+    </div>
+    {% endif %}
+    <div class="user__profile">
+      <h1>User Profile</h1>
+      <p>User ID: {{ user.id }}</p>
+      <p>Username: {{ user.username }}</p>
+      <p>Email: {{ user.email }}</p>
+
+      <div class="user__update__delete">
+        <button id="show-form-button">Update Profile</button>
+        <a href="{{ url_for('delete_profile') }}"><button id="delete-profile">Delete Profile</button></a>
+      </div>
+
+      <form class="update__user__form"
+        id="update-form"
+        method="post"
+        action="{{ url_for('update_profile') }}"
+      >
+        <input
+          type="text"
+          id="username"
+          name="username"
+          value="{{ user.username }}"
+        />
+        <br />
+        <input type="email" id="email" name="email" value="{{ user.email }}" />
+        <br />
+        <input type="submit" value="Update Profile" id="hide-form-button" />
+      </form>
+    </div>
+
+    <!-- JavaScript to toggle the form visibility -->
+    <script>
+      const showFormButton = document.getElementById("show-form-button");
+      const hideFormButton = document.getElementById("hide-form-button");
+      const updateForm = document.getElementById("update-form");
+
+      showFormButton.addEventListener("click", function () {
+        if (updateForm.style.display === "none") {
+          updateForm.style.display = "block";
+        } else {
+          updateForm.style.display = "none";
+        }
+      });
+
+      hideFormButton.addEventListener("click", function () {
+        if (updateForm.style.display === "block") {
+          updateForm.style.display = "none";
+        } else {
+          updateForm.style.display = "block";
+        }
+      });
+    </script>
+  </body>
+</html>

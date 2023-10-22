@@ -1,0 +1,54 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #fff;
+}
+body{
+    background-image: url('../static/images/comeHotel.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.logo img{
+    width: 200px;
+    height: 80px;
+}
+
+:is(.footer){
+    padding: 10px;
+}
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0.3px 0.5px 2px rgba(0, 0, 0, 0.525);
+}
+
+.header a{
+    text-decoration: none;
+}
+
+a .login_signup{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    padding: 5px 10px;
+    border: 1px solid #000;
+    border-radius: 50px;
+    transition: 250ms all ease-in-out;
+}
+
+.login_signup:hover{
+    background-color: #8080806b;
+    cursor: pointer;
+}
+
+.footer{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
