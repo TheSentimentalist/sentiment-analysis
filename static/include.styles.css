@@ -16,6 +16,10 @@ body{
     height: 80px;
 }
 
+.logo__text{
+    display: none;
+}
+
 :is(.footer){
     padding: 10px;
 }
@@ -51,4 +55,62 @@ a .login_signup{
     align-items: center;
     align-content: center;
     justify-content: center;
+}
+
+@media (max-width:768px){
+    body{
+        background-image: none;
+        background-color: #030333;
+    }
+
+    .header{
+        justify-content: space-around;
+        padding: 10px 0;
+    }
+
+    .header .logo{
+        display: none;
+    }
+    
+    .logo__text{
+        display: flex;
+        font-size: 25px;
+        font-weight: 500;
+    }
+}
+
+@media (max-width: 360px) {
+    .header{
+        justify-content: center;
+    }
+
+    .login_signup{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .footer{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+
+    .footer .rights{
+        font-size: 16px;
+        font-family: 100;
+    }
+}
+
+@media (max-width:255px) {
+    a .login_signup{
+        padding: none;
+        border: none;
+        outline: none;
+        width: 100%;
+        color: #0000ff;
+        font-size: 16px;
+    }
 }

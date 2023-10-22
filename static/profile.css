@@ -102,3 +102,9 @@ a #delete-profile{
     border-radius: 10px;
     margin-bottom: 5px;
 }
+
+@media (min-width: 768px) {
+    .user__profile{
+        width: 80%;
+    }
+}

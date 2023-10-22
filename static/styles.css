@@ -304,3 +304,21 @@ h4 {
     width: 100%; 
     height: 300px; 
 }
+
+@media (min-width: 768px) {
+    .card{
+        width: 80%;
+        height: 90%;
+    }
+
+    .input-box, .btn{
+        height: 40px;
+        font-size: 22px;
+    }
+
+    .card-review{
+        position: absolute;
+        bottom: 5px;
+        width: 80%;
+    }
+}
