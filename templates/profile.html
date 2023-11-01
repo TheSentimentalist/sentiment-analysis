@@ -9,7 +9,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   </head>
   <body>
-    {% if current_user.is_authenticated %}
+    {% if current_user.is_authenticated and current_user.is_admin %}
+    <div class="user__logged">
+      <p><span class="user__back"><a href="{{ url_for('admin_dashboard') }}"><i class="fa-solid fa-arrow-left"></i>Back</a></span></p>
+      <span class="user__logout"><a href="{{ url_for('logout') }}">Logout</a></span>
+    </div>
+    {% else %}
     <div class="user__logged">
       <p><span class="user__back"><a href="{{ url_for('submit_review') }}"><i class="fa-solid fa-arrow-left"></i>Back</a></span></p>
       <span class="user__logout"><a href="{{ url_for('logout') }}">Logout</a></span>

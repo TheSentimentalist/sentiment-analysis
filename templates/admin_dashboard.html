@@ -8,14 +8,29 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bokeh/3.4.0-dev.1/bokeh.min.js" integrity="sha512-mwamSZkmkoa4/qFGK0aCLgbH7n2NvgAKjgbN9aULEZG4Zihbfn367ewNHnB5AbYeGIYdpzyFT5F0kNUlMKaPwQ==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
   </head>
   <body>
+    {% if current_user.is_authenticated %}
+    <div class="user__logged">
+      <p>Welcome, <span class="user__name"><a href="{{ url_for('profile') }}">{{ current_user.username }}</a></span>!</p>
+      <span class="user__logout"><a href="{{ url_for('logout') }}">Logout</a></span>
+    </div>
+    {% endif %}
     <div>
-      <h4>The hotels review Analyst</h4>
+      <h2>The hotels review Analyst</h2>
     </div>
      <!-- Bokeh Plot -->
      <div class="graph">
       {{ script | safe }}
       {{ div | safe }}
      </div>
+     <h2>All comments / reviews</h2>
+     {% for review in reviews %}
+      <div class="all__reviews">
+        <tr>
+            <td>{{ review.text }}</td>
+        </tr>
+      </div>
+    {% endfor %}
+    
     <!-- <div id="reviewCount">{{ review_count }}</div>
     <p>Total Reviews: {{ review_count }}</p>
     <div class="chart-container">

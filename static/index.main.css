@@ -2,9 +2,32 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    align-content: center;
     justify-content: center;
     padding: 15px;
+}
+
+.index__main__desc__blob{
+    display: flex;
+}
+
+.index__main__main__blob{
+    border-radius: 94% 31% 30% 67% / 67% 37% 56% 34%;
+    width: 250px;
+    height: 250px;
+    background: #f09;
+    background-image: linear-gradient(45deg, #FFA500, #FF6347);
+    box-shadow: -10vmin 10vmin 0 rgba(255,255,255,0.07);
+}
+
+.index__main__main__desc, .index__main__welcome{
+    background: -webkit-linear-gradient(135deg, #FFA500, #FF6347);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 20px;
+}
+
+.index__main__welcome{
+    font-size: 30px;
 }
 
 @media (max-width: 360px) {
